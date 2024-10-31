@@ -19,6 +19,7 @@ function getComputerChoice() {
 function playRound(humanChoice, computerChoice) {
   humanChoice = humanChoice.toLowerCase()
   const resultsDiv = document.getElementById('results')
+  const scoreboardDiv = document.getElementById('scoreboard')
 
   if (humanChoice === computerChoice) {
     resultsDiv.textContent = "It's a tie!"
@@ -56,7 +57,7 @@ function playRound(humanChoice, computerChoice) {
       break
   }
 
-  resultsDiv.textContent += `\nHuman: ${humanScore} - Computer: ${computerScore}`
+  scoreboardDiv.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
 
   if (humanScore === 5) {
     resultsDiv.textContent += '\nYou win the game!'
