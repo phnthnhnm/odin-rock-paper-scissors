@@ -28,15 +28,17 @@ function playRound(humanChoice, computerChoice) {
   }
 
   resultsDiv.innerHTML = `
-    <div>
-      <div>Human:</div>
-      <span class="choice-emoji">${choiceEmojis[humanChoice]}</span>
+    <div class="choice-container">
+      <div>
+        <div>👨Human:</div>
+        <span class="choice-emoji">${choiceEmojis[humanChoice]}</span>
+      </div>
+      <div>vs</div>
+      <div>
+        <div>🖥️Computer:</div>
+        <span class="choice-emoji">${choiceEmojis[computerChoice]}</span>
+      </div>
     </div>
-    <div>
-      <div>Computer:</div>
-      <span class="choice-emoji">${choiceEmojis[computerChoice]}</span>
-    </div>
-    <div>vs</div>
   `
 
   if (humanChoice === computerChoice) {

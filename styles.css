@@ -19,6 +19,8 @@ button {
   background-color: #007bff;
   color: white;
   transition: background-color 0.3s;
+  width: 150px; /* Set a fixed width for all buttons */
+  height: 50px; /* Set a fixed height for all buttons */
 }
 
 button:hover {
@@ -43,4 +45,14 @@ button:hover {
 
 .choice-emoji {
   font-size: 48px; /* Larger font size for the choice emojis */
+}
+
+.choice-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.choice-container div {
+  margin: 0 10px;
 }
