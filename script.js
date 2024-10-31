@@ -22,9 +22,9 @@ function playRound(humanChoice, computerChoice) {
   const scoreboardDiv = document.getElementById('scoreboard')
 
   const choiceEmojis = {
-    rock: '🪨',
-    paper: '📄',
-    scissors: '✂️',
+    rock: '✊',
+    paper: '✋',
+    scissors: '✌️',
   }
 
   resultsDiv.innerHTML = `<span class="choice-emoji">${choiceEmojis[humanChoice]}</span> vs <span class="choice-emoji">${choiceEmojis[computerChoice]}</span>\n`
