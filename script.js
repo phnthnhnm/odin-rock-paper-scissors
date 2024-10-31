@@ -27,51 +27,69 @@ function playRound(humanChoice, computerChoice) {
     scissors: '✌️',
   }
 
-  resultsDiv.innerHTML = `
-    <div class="choice-container">
-      <div>
-        <div>👨Human:</div>
-        <span class="choice-emoji">${choiceEmojis[humanChoice]}</span>
-      </div>
-      <div>vs</div>
-      <div>
-        <div>🖥️Computer:</div>
-        <span class="choice-emoji">${choiceEmojis[computerChoice]}</span>
-      </div>
-    </div>
-  `
+  resultsDiv.textContent = ''
+  const choiceContainer = document.createElement('div')
+  choiceContainer.classList.add('choice-container')
+
+  const humanDiv = document.createElement('div')
+  humanDiv.innerHTML = `<div>👨Human:</div><span class="choice-emoji">${choiceEmojis[humanChoice]}</span>`
+  choiceContainer.appendChild(humanDiv)
+
+  const vsDiv = document.createElement('div')
+  vsDiv.textContent = 'vs'
+  choiceContainer.appendChild(vsDiv)
+
+  const computerDiv = document.createElement('div')
+  computerDiv.innerHTML = `<div>🖥️Computer:</div><span class="choice-emoji">${choiceEmojis[computerChoice]}</span>`
+  choiceContainer.appendChild(computerDiv)
+
+  resultsDiv.appendChild(choiceContainer)
 
   if (humanChoice === computerChoice) {
-    resultsDiv.innerHTML += "<div>It's a tie!</div>"
+    const tieDiv = document.createElement('div')
+    tieDiv.textContent = "It's a tie!"
+    resultsDiv.appendChild(tieDiv)
   }
 
   switch (humanChoice) {
     case 'rock':
       if (computerChoice === 'paper') {
-        resultsDiv.innerHTML += '<div>Computer wins!</div>'
+        const winDiv = document.createElement('div')
+        winDiv.textContent = 'Computer wins!'
+        resultsDiv.appendChild(winDiv)
         computerScore++
       } else if (computerChoice === 'scissors') {
-        resultsDiv.innerHTML += '<div>You win!</div>'
+        const winDiv = document.createElement('div')
+        winDiv.textContent = 'You win!'
+        resultsDiv.appendChild(winDiv)
         humanScore++
       }
       break
 
     case 'paper':
       if (computerChoice === 'scissors') {
-        resultsDiv.innerHTML += '<div>Computer wins!</div>'
+        const winDiv = document.createElement('div')
+        winDiv.textContent = 'Computer wins!'
+        resultsDiv.appendChild(winDiv)
         computerScore++
       } else if (computerChoice === 'rock') {
-        resultsDiv.innerHTML += '<div>You win!</div>'
+        const winDiv = document.createElement('div')
+        winDiv.textContent = 'You win!'
+        resultsDiv.appendChild(winDiv)
         humanScore++
       }
       break
 
     case 'scissors':
       if (computerChoice === 'rock') {
-        resultsDiv.innerHTML += '<div>Computer wins!</div>'
+        const winDiv = document.createElement('div')
+        winDiv.textContent = 'Computer wins!'
+        resultsDiv.appendChild(winDiv)
         computerScore++
       } else if (computerChoice === 'paper') {
-        resultsDiv.innerHTML += '<div>You win!</div>'
+        const winDiv = document.createElement('div')
+        winDiv.textContent = 'You win!'
+        resultsDiv.appendChild(winDiv)
         humanScore++
       }
       break
@@ -80,10 +98,14 @@ function playRound(humanChoice, computerChoice) {
   scoreboardDiv.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
 
   if (humanScore === 5) {
-    resultsDiv.innerHTML += '<div>You win the game!</div>'
+    const gameWinDiv = document.createElement('div')
+    gameWinDiv.textContent = 'You win the game!'
+    resultsDiv.appendChild(gameWinDiv)
     resetGame()
   } else if (computerScore === 5) {
-    resultsDiv.innerHTML += '<div>Computer wins the game!</div>'
+    const gameWinDiv = document.createElement('div')
+    gameWinDiv.textContent = 'Computer wins the game!'
+    resultsDiv.appendChild(gameWinDiv)
     resetGame()
   }
 }
