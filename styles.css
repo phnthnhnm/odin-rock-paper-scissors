@@ -40,3 +40,7 @@ button:hover {
   margin-top: 10px;
   color: #333;
 }
+
+.choice-emoji {
+  font-size: 48px; /* Larger font size for the choice emojis */
+}

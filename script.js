@@ -27,39 +27,39 @@ function playRound(humanChoice, computerChoice) {
     scissors: '✂️',
   }
 
-  resultsDiv.textContent = `${choiceEmojis[humanChoice]} vs ${choiceEmojis[computerChoice]}\n`
+  resultsDiv.innerHTML = `<span class="choice-emoji">${choiceEmojis[humanChoice]}</span> vs <span class="choice-emoji">${choiceEmojis[computerChoice]}</span>\n`
 
   if (humanChoice === computerChoice) {
-    resultsDiv.textContent += "It's a tie!"
+    resultsDiv.innerHTML += "It's a tie!"
   }
 
   switch (humanChoice) {
     case 'rock':
       if (computerChoice === 'paper') {
-        resultsDiv.textContent += 'Computer wins! (Paper beats rock)'
+        resultsDiv.innerHTML += 'Computer wins! (Paper beats rock)'
         computerScore++
       } else if (computerChoice === 'scissors') {
-        resultsDiv.textContent += 'You win! (Rock beats scissors)'
+        resultsDiv.innerHTML += 'You win! (Rock beats scissors)'
         humanScore++
       }
       break
 
     case 'paper':
       if (computerChoice === 'scissors') {
-        resultsDiv.textContent += 'Computer wins! (Scissors beats paper)'
+        resultsDiv.innerHTML += 'Computer wins! (Scissors beats paper)'
         computerScore++
       } else if (computerChoice === 'rock') {
-        resultsDiv.textContent += 'You win! (Paper beats rock)'
+        resultsDiv.innerHTML += 'You win! (Paper beats rock)'
         humanScore++
       }
       break
 
     case 'scissors':
       if (computerChoice === 'rock') {
-        resultsDiv.textContent += 'Computer wins! (Rock beats scissors)'
+        resultsDiv.innerHTML += 'Computer wins! (Rock beats scissors)'
         computerScore++
       } else if (computerChoice === 'paper') {
-        resultsDiv.textContent += 'You win! (Scissors beats paper)'
+        resultsDiv.innerHTML += 'You win! (Scissors beats paper)'
         humanScore++
       }
       break
@@ -68,10 +68,10 @@ function playRound(humanChoice, computerChoice) {
   scoreboardDiv.textContent = `Human: ${humanScore} - Computer: ${computerScore}`
 
   if (humanScore === 5) {
-    resultsDiv.textContent += '\nYou win the game!'
+    resultsDiv.innerHTML += '\nYou win the game!'
     resetGame()
   } else if (computerScore === 5) {
-    resultsDiv.textContent += '\nComputer wins the game!'
+    resultsDiv.innerHTML += '\nComputer wins the game!'
     resetGame()
   }
 }
