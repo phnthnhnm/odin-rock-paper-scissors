@@ -36,30 +36,30 @@ function playRound(humanChoice, computerChoice) {
   switch (humanChoice) {
     case 'rock':
       if (computerChoice === 'paper') {
-        resultsDiv.innerHTML += 'Computer wins! (Paper beats rock)'
+        resultsDiv.innerHTML += 'Computer wins!'
         computerScore++
       } else if (computerChoice === 'scissors') {
-        resultsDiv.innerHTML += 'You win! (Rock beats scissors)'
+        resultsDiv.innerHTML += 'You win!'
         humanScore++
       }
       break
 
     case 'paper':
       if (computerChoice === 'scissors') {
-        resultsDiv.innerHTML += 'Computer wins! (Scissors beats paper)'
+        resultsDiv.innerHTML += 'Computer wins!'
         computerScore++
       } else if (computerChoice === 'rock') {
-        resultsDiv.innerHTML += 'You win! (Paper beats rock)'
+        resultsDiv.innerHTML += 'You win!'
         humanScore++
       }
       break
 
     case 'scissors':
       if (computerChoice === 'rock') {
-        resultsDiv.innerHTML += 'Computer wins! (Rock beats scissors)'
+        resultsDiv.innerHTML += 'Computer wins!'
         computerScore++
       } else if (computerChoice === 'paper') {
-        resultsDiv.innerHTML += 'You win! (Scissors beats paper)'
+        resultsDiv.innerHTML += 'You win!'
         humanScore++
       }
       break
