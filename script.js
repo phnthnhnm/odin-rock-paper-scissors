@@ -21,37 +21,45 @@ function playRound(humanChoice, computerChoice) {
   const resultsDiv = document.getElementById('results')
   const scoreboardDiv = document.getElementById('scoreboard')
 
+  const choiceEmojis = {
+    rock: '🪨',
+    paper: '📄',
+    scissors: '✂️',
+  }
+
+  resultsDiv.textContent = `${choiceEmojis[humanChoice]} vs ${choiceEmojis[computerChoice]}\n`
+
   if (humanChoice === computerChoice) {
-    resultsDiv.textContent = "It's a tie!"
+    resultsDiv.textContent += "It's a tie!"
   }
 
   switch (humanChoice) {
     case 'rock':
       if (computerChoice === 'paper') {
-        resultsDiv.textContent = 'Computer wins! (Paper beats rock)'
+        resultsDiv.textContent += 'Computer wins! (Paper beats rock)'
         computerScore++
       } else if (computerChoice === 'scissors') {
-        resultsDiv.textContent = 'You win! (Rock beats scissors)'
+        resultsDiv.textContent += 'You win! (Rock beats scissors)'
         humanScore++
       }
       break
 
     case 'paper':
       if (computerChoice === 'scissors') {
-        resultsDiv.textContent = 'Computer wins! (Scissors beats paper)'
+        resultsDiv.textContent += 'Computer wins! (Scissors beats paper)'
         computerScore++
       } else if (computerChoice === 'rock') {
-        resultsDiv.textContent = 'You win! (Paper beats rock)'
+        resultsDiv.textContent += 'You win! (Paper beats rock)'
         humanScore++
       }
       break
 
     case 'scissors':
       if (computerChoice === 'rock') {
-        resultsDiv.textContent = 'Computer wins! (Rock beats scissors)'
+        resultsDiv.textContent += 'Computer wins! (Rock beats scissors)'
         computerScore++
       } else if (computerChoice === 'paper') {
-        resultsDiv.textContent = 'You win! (Scissors beats paper)'
+        resultsDiv.textContent += 'You win! (Scissors beats paper)'
         humanScore++
       }
       break
